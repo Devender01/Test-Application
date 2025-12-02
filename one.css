@@ -1,0 +1,75 @@
+body {
+    background: #f0f0f0;
+    margin: 0;
+    font-family: Arial;
+}
+
+.title {
+    text-align: center;
+    background: rgb(187, 153, 153);
+    padding: 15px;
+}
+
+.box {
+    width: 90%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.grey {
+    background: #ccc;
+}
+
+.red {
+    background: rgb(143, 70, 70);
+    color: white;
+}
+
+.heading {
+    margin-left: 20px;
+}
+
+.list {
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.desc {
+    display: none;
+    margin-left: 40px;
+}
+
+
+.btn-row {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.next-btn,
+.logout-btn {
+    padding: 10px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+}
+
+.next-btn {
+    background: blue;
+}
+
+.next-btn:hover {
+    background: darkblue;
+}
+
+.logout-btn {
+    background: red;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
