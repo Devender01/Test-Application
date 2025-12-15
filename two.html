@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Gainsight PX Tag-->
+  <script type="text/javascript">
+  (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
+      (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
+    var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
+    var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
+  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-DGLLXHAZW32B-2");
+function logout() {
+    aptrinsic('reset');
+    window.location.href = "index.html";
+}
+</script>
+<!-- Gainsight PX Tag-->
     <title>Web Application</title>
     <link rel="stylesheet" href="two.css">
 </head>
 <body>
-
+        <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- App Logo / Name -->
+        <a href="index.html" class="nav-logo">Dev's Test Application</a>
+        <!-- Links to all pages -->
+        <ul class="nav-links">
+            <li><a href="one.html">Home</a></li>
+            <li><a href="two.html">One</a></li>
+            <li><a href="thankyou.html">Thank You</a></li>
+             <li><a href="">Help</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="top-bar">
     <button onclick="showSection('about')">ABOUT</button>
     <button onclick="showSection('contact')">CONTACT</button>
     <button onclick="showSection('test')">TEST</button>
     <button onclick="showSection('bmi')">BMI</button>
     <button onclick="showSection('textbox')">TEXTBOX</button>
-    <button class="logout-small" onclick="window.location.href='index.html'">LOGOUT</button>
+   <button class="logout-small" onclick="window.location.href='index.html'">LOGOUT</button>
 </div>
-
 <div class="fixed-box" id="contentBox">
-
     <div id="about" class="section">
         <h2>Dehradun, the capital city of Uttarakhand, is nestled in the Doon Valley between the scenic Himalayas and the Shivalik Hills. Known for its pleasant climate, lush greenery, and vibrant culture, it is a perfect blend of nature and urban life. The city is famous for its educational institutions, including prestigious schools and universities, making it a hub for students. Dehradun is also a gateway to popular hill stations like Mussoorie and adventure destinations in Uttarakhand. With attractions like Robber’s Cave, Sahastradhara, Mindrolling Monastery, Tapkeshwar Temple, and the Forest Research Institute, the city offers a mix of natural beauty, spirituality, and heritage. Its serene environment, along with markets, cafes, and cultural events, makes Dehradun an ideal destination for both tourists and residents seeking tranquility and exploration.</h2>
         <div class="img-row">
@@ -27,42 +51,34 @@
             <img src="dehradun2.jpg">
         </div>
     </div>
-
     <div id="contact" class="section">
         <h2>Contact Form</h2>
         <form id="contactForm" onsubmit="submitContact(event)">
-
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
             </div>
-
             <div class="form-group">
                 <label for="address">Address:</label>
                 <input type="text" id="address" placeholder="Enter your address" required>
             </div>
-
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
                 <input type="text" id="phone" placeholder="Enter your phone number" required>
             </div>
-
             <div class="form-group">
                 <label for="age">Age:</label>
                 <input type="number" id="age" placeholder="Enter your age" required>
             </div>
-
             <div class="form-group">
                 <label for="dob">Date:</label>
                 <input type="date" id="dob" required>
             </div>
-
             <div class="gender-box">
                 <span class="gender-label">Gender:</span>
                 <label><input type="radio" name="gender" value="Male" required> Male</label>
                 <label><input type="radio" name="gender" value="Female"> Female</label>
             </div>
-
             <div class="dropdown" id="countryDropDown">
                 <label>Country:</label>
                 <div class="drop-btn" onclick="toggleCountry()">Select Country</div>
@@ -73,19 +89,15 @@
                     <p>Australia</p>
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="fileUpload">Upload File:</label>
                 <input type="file" id="fileUpload">
             </div>
-
             <button type="submit">Submit</button>
         </form>
     </div>
-
     <div id="test" class="section">
         <h2>Test Section</h2>
-
         <div style="display:flex; gap:15px; justify-content:center; margin-left: 500px;">
             <div class="dropdown" id="portDropDown" style="width:120px;">
                 <div id="selectPortBtn" class="drop-btn">Select Port</div>
@@ -96,7 +108,6 @@
                     <p>Port 4</p>
                 </div>
             </div>
-
             <div class="dropdown" id="placeDropDown" style="width:120px;">
                 <div id="selectPlaceBtn" class="drop-btn">Select Place</div>
                 <div id="placeMenu" class="drop-content">
@@ -107,18 +118,15 @@
                 </div>
             </div>
         </div>
-
         <div class="btn-row">
             <button onclick="alert('Button 1 clicked')">BTN1</button>
             <button onclick="alert('Button 2 clicked')">BTN2</button>
             <button onclick="alert('Button 3 clicked')">BTN3</button>
             <button onclick="alert('Button 4 clicked')">BTN4</button>
         </div>
-
         <button class="animated-btn" onclick="jump(this)">Animated Button</button>
         <textarea class="medium-text">This is some random text.</textarea>
     </div>
-
     <div id="bmi" class="section">
         <h2>Calculate BMI</h2>
         <form onsubmit="calculateBMI(event)">
@@ -127,21 +135,23 @@
             <button type="submit">Calculate</button>
         </form>
     </div>
-
     <div id="textbox" class="section">
         <h2>Input Box</h2>
         <textarea id="userText" class="large-text" placeholder="Enter your text here"></textarea>
         <button onclick="alert('Submitted: ' + document.getElementById('userText').value)">Submit</button>
     </div>
-
 </div>
-
 <button class="back-btn" onclick="window.location.href='one.html'">Back</button>
 <button class="logout-btn" onclick="window.location.href='thankyou.html'">Next</button>
-
 <div class="drag-box" id="drag1">Box 1</div>
 <div class="drag-box" id="drag2">Box 2</div>
-
 <script src="two.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
