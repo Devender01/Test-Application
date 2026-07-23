@@ -2,7 +2,6 @@
 function goLogout() {
   
     aptrinsic('reset');
-
     
     window.location.href = 'index.html';
 }

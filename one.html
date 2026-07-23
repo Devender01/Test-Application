@@ -5,15 +5,27 @@
   <script type="text/javascript">
   (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
       (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
-    var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
+    var r=t.createElement("script");r.async=!0;r.src=a+"?a="+e;
     var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
-  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-DGLLXHAZW32B-2");
+  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-GAICC0F6B7MJ-2");
 
 
 function logout() {
    aptrinsic('reset');
     window.location.href = "index.html";
 } 
+
+// 🔹 Added: Trigger PX feedback API on Help click
+function triggerHelpFeedback(event) {
+    event.preventDefault(); // Prevent page reload
+    console.log("Help clicked - sending feedback");
+
+    aptrinsic('send', 'feedback', {
+        category: 'Issue',
+        subject: 'feedback feature API',
+        description: 'put your feedback here'
+    });
+}
 </script>
 <!-- Gainsight PX Tag-->
     <meta charset="UTF-8">
@@ -35,7 +47,9 @@ function logout() {
             <li><a href="one.html">Home</a></li>
             <li><a href="two.html">One</a></li>
             <li><a href="thankyou.html">Thank You</a></li>
-           <li><a href="">Help</a></li>
+            
+            <!-- 🔹 Updated Help link -->
+            <li><a href="" onclick="triggerHelpFeedback(event)">Help</a></li>
 
         </ul>
     </div>
